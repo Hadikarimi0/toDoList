@@ -1,0 +1,118 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    display: grid;
+    place-content: center;
+}
+
+.container {
+    width: 600px;
+}
+
+.container .header {
+    background-color: chocolate;
+    padding: 15px 40px 30px;
+    color: white;
+    text-align: center;
+}
+
+.container .header h2 {
+    margin: 10px;
+}
+
+.container .header::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.container .taskList {
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+ul {
+    list-style: none;
+}
+
+input {
+    width: 75%;
+    float: left;
+    border: none;
+    outline: none;
+    padding: 10px;
+    font-size: 1rem;
+
+}
+
+button {
+    width: 25%;
+    border: none;
+    float: left;
+    padding: 10px;
+    background-color: #d9d9d9;
+    color: #555;
+    text-align: center;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+    border-radius: 0;
+}
+
+button:hover {
+    background-color: #bbb;
+}
+
+ul li {
+    cursor: pointer;
+    position: relative;
+    padding: 12px 8px 12px 40px;
+    background-color: #eee;
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
+    user-select: none;
+    margin: 2px;
+}
+
+ul li:hover {
+    background: rgb(205, 204, 204);
+}
+
+.closeBtn {
+    display: none;
+    position: absolute;
+    right: 15px;
+}
+
+ul li:hover .closeBtn {
+    display: inline-block;
+}
+
+ul li .closeBtn i:hover {
+    color: red;
+    transition: all 0.3s ease;
+}
+
+.done {
+    background: #888;
+    color: #fff;
+    text-decoration: line-through;
+}
+.done::before {
+    content: "";
+    width: 10px;
+    height: 20px;
+    position: absolute;
+    left: 15px;
+    top: 8px;
+    border-color: rgb(60, 255, 0);
+    border-width: 0 2px 2px 0;
+    border-style: solid;
+    transform: rotate(45deg);
+}
