@@ -51,7 +51,7 @@ ul.addEventListener("click", (e) => {
   }
 });
 
-ul.addEventListener("touchstart", (e) => {
+ul.addEventListener("touchend", (e) => {
   if (e.target.nodeName === "I") {
     let ele = e.target.parentElement.parentElement;
     ele.style = "display: none";
