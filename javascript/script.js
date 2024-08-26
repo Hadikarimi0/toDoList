@@ -13,7 +13,14 @@ document.addEventListener("visibilitychange", function () {
   }
 });
 
-btn.addEventListener("click", () => {
+// Listen for both click and touchstart events
+btn.addEventListener("click", handleButtonClick);
+btn.addEventListener("touchstart", handleButtonClick);
+
+function handleButtonClick(event) {
+  // Prevent default behavior for touchstart to avoid unnecessary firing
+  event.preventDefault();
+
   let text = input.value;
   if (text !== "") {
     let task = createTask(text);
@@ -23,7 +30,7 @@ btn.addEventListener("click", () => {
   } else {
     alert("Please complete The Title");
   }
-});
+}
 
 input.addEventListener("keydown", (e) => {
   if (e.key === "Enter") {
@@ -37,7 +44,7 @@ ul.addEventListener("click", (e) => {
     ele.style = "display : none";
   }
   if (e.target.nodeName === "LI") {
-    let ele = e.target.classList.toggle("done");
+    e.target.classList.toggle("done");
   }
 });
 
